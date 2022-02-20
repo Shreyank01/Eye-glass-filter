@@ -34,7 +34,7 @@ function gotPoses(results) {
 
 function draw() {
     image(video , 0 , 0 , 400 , 400);
-    image(img , R_eyeY  ,R_eyeY  , 50 ,55);
+    image(img , R_eyeY-30  ,R_eyeY-10  , 50 ,55);
 }
 
 function take_snapshot() {

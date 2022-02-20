@@ -1,5 +1,9 @@
 function preload() {
+    img = loadImage('https://i.postimg.cc/W4qR8dCG/1426179.png');
 }
+
+R_eyeX = "";
+R_eyeY = "";
 
 function setup() {
     canvas = createCanvas(400 ,400);
@@ -19,6 +23,8 @@ function gotPoses(results) {
 
     if(results.length > 0) {
         console.log(results);
+        R_eyeX = results[0].pose.rightEye.x;
+        R_eyeY = results[0].pose.rightEye.y;
         console.log("right eye x =" + results[0].pose.rightEye.x);
         console.log("right y =" + results[0].pose.rightEye.y);
      
@@ -27,7 +33,8 @@ function gotPoses(results) {
 
 
 function draw() {
-    image(video , 0 , 0 , 400 , 400)
+    image(video , 0 , 0 , 400 , 400);
+    image(img , R_eyeY  ,R_eyeY  , 50 ,55);
 }
 
 function take_snapshot() {
